@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class SubmitViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+class SubmitViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate{
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var imgPreview: UIImageView!
@@ -44,11 +44,17 @@ class SubmitViewController: UIViewController,UINavigationControllerDelegate,UIIm
     
     func submitEntry(){
         //this is where you actually upload the submission to the server
+        print("Submitted! (not actually)")
     }
     
-    @IBAction func viewTapped(recognizer:UITapGestureRecognizer!){
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         nameField.resignFirstResponder()
         titleField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
