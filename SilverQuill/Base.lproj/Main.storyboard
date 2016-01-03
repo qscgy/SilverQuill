@@ -418,25 +418,79 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCt-aZ-9dV">
-                                <rect key="frame" x="69" y="39" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCt-aZ-9dV">
+                                <rect key="frame" x="262" y="105" width="77" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="Zfi-Bj-6lX" eventType="touchUpInside" id="q81-rJ-x1b"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVw-Uo-waM">
-                                <rect key="frame" x="20" y="153" width="206" height="286"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creator Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmv-wd-Qba">
+                                <rect key="frame" x="20" y="24" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submission Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-Je-gP4">
+                                <rect key="frame" x="20" y="58" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RbL-wy-710">
+                                <rect key="frame" x="162" y="20" width="418" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GVw-Uo-waM">
+                                <rect key="frame" x="188" y="136" width="224" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="314" id="Cr9-cq-l7g"/>
+                                    <constraint firstAttribute="width" constant="224" id="K1r-es-udq"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX3-Ij-D0g">
+                                <rect key="frame" x="276" y="449" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="Zfi-Bj-6lX" eventType="touchUpInside" id="tmf-PI-ls4"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMt-dJ-yqF">
+                                <rect key="frame" x="162" y="54" width="418" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GVw-Uo-waM" firstAttribute="centerX" secondItem="4oU-Za-sDI" secondAttribute="centerX" id="1hw-do-kBJ"/>
+                            <constraint firstItem="fMt-dJ-yqF" firstAttribute="trailing" secondItem="4oU-Za-sDI" secondAttribute="trailingMargin" id="6up-SR-Eyl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RbL-wy-710" secondAttribute="trailing" id="7y2-43-aiZ"/>
+                            <constraint firstItem="VQs-q9-CA2" firstAttribute="top" secondItem="GVw-Uo-waM" secondAttribute="bottom" constant="37" id="AoC-bW-Qye"/>
+                            <constraint firstItem="VQs-q9-CA2" firstAttribute="top" secondItem="oX3-Ij-D0g" secondAttribute="bottom" constant="8" id="Hg5-jZ-ClL"/>
+                            <constraint firstItem="GVw-Uo-waM" firstAttribute="top" secondItem="FCt-aZ-9dV" secondAttribute="bottom" constant="1" id="RWb-WP-VCo"/>
+                            <constraint firstItem="FCt-aZ-9dV" firstAttribute="centerX" secondItem="4oU-Za-sDI" secondAttribute="centerX" id="VmH-t9-DzQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dmv-wd-Qba" secondAttribute="leading" id="fww-vk-vue"/>
+                            <constraint firstItem="QS8-Je-gP4" firstAttribute="top" secondItem="dmv-wd-Qba" secondAttribute="bottom" constant="13" id="ie6-0n-hoW"/>
+                            <constraint firstItem="dmv-wd-Qba" firstAttribute="top" secondItem="iaC-Ac-N2d" secondAttribute="bottom" constant="24" id="imQ-z1-glp"/>
+                            <constraint firstItem="oX3-Ij-D0g" firstAttribute="centerX" secondItem="4oU-Za-sDI" secondAttribute="centerX" id="oRx-hH-8kB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QS8-Je-gP4" secondAttribute="leading" id="p2I-Y1-32c"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Submit" image="Submit" id="8GK-fS-8Lm"/>
                     <connections>
                         <outlet property="imgPreview" destination="GVw-Uo-waM" id="ALu-KB-l1y"/>
+                        <outlet property="nameField" destination="RbL-wy-710" id="1Fc-hK-LdC"/>
+                        <outlet property="titleField" destination="fMt-dJ-yqF" id="r6S-qO-Xst"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCf-bL-ygI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VI4-8y-b7X">
+                    <connections>
+                        <action selector="viewTapped:" destination="Zfi-Bj-6lX" id="vzf-Iu-ura"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1913" y="-844"/>
         </scene>

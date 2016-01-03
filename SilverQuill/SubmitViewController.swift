@@ -9,9 +9,11 @@
 import UIKit
 import AVFoundation
 
-class SubmitViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class SubmitViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     
+    @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var imgPreview: UIImageView!
+    @IBOutlet weak var nameField: UITextField!
     var imagePicker:UIImagePickerController!
     
     override func viewDidLoad() {
@@ -28,6 +30,25 @@ class SubmitViewController: UIViewController,UINavigationControllerDelegate,UIIm
         imagePicker.sourceType = .Camera
         presentViewController(imagePicker, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func submit(sender: AnyObject) {
+        //TODO prevent alert if not all data is present
+        let alert=UIAlertController(title: "Submit", message: "Submit entry?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {action in
+            self.submitEntry()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func submitEntry(){
+        //this is where you actually upload the submission to the server
+    }
+    
+    @IBAction func viewTapped(recognizer:UITapGestureRecognizer!){
+        nameField.resignFirstResponder()
+        titleField.resignFirstResponder()
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
